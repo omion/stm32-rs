@@ -460,6 +460,49 @@ RCC:
         bitWidth: 1
         bitOffset: 26
 
+# RNG block
+RNG:
+  CR:
+    _add:
+      RNG_CONFIG3:
+        description: RNG configuration 3
+        bitWidth: 4
+        bitOffset: 8
+      NISTC:
+        description: Non NIST compliant
+        bitWidth: 1
+        bitOffset: 12
+      RNG_CONFIG2:
+        description: RNG configuration 2
+        bitWidth: 3
+        bitOffset: 13
+      CLKDIV:
+        description: Clock divider factor
+        bitWidth: 4
+        bitOffset: 16
+      RNG_CONFIG1:
+        description: RNG configuration 1
+        bitWidth: 6
+        bitOffset: 20
+      CONDRST:
+        description: Conditioning soft reset
+        bitWidth: 1
+        bitOffset: 30
+      CONFIGLOCK:
+        description: RNG config lock
+        bitWidth: 1
+        bitOffset: 31
+  _add:
+    HTCR:
+      description: RNG health test control register
+      addressOffset: 0x10
+      resetValue: "0x00005A4E"
+      fields:
+        HTCFG:
+          description: Health test configuration
+          bitWidth: 32
+          bitOffset: 0
+
 # OCTOSPI blocks
 OCTOSPI?:
   DCR1:
